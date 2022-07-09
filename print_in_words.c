@@ -17,7 +17,11 @@ void digits_arr(int digit, int arr[]) { //розділити введене чи
 }
 
 void in_words(int digit, const int arr[]) { //вивід числа словами
-	bool not_null = false; //змінна нульового числа
+	bool not_null = false; //змінна початку виводу числа свловами
+	if (digit == 0) {
+		printf("нуль ");
+		return;
+	}
 	if (digit < 0) //якщо введене число менше за 0
 		printf("мiнус ");
 	for (int i = 0; i < 10; i++) { //цикл виводу усього числа словами
@@ -51,7 +55,7 @@ void in_words(int digit, const int arr[]) { //вивід числа словам
 			case 8: printf("вiсiмсот "); break;
 			case 9: printf("дев'ятсот "); break;
 			}
-			if (!arr[i + 1]&& !arr[i + 2]) { //якщо наступні два елементи нулі
+			if (!arr[i + 1] && !arr[i + 2]) { //якщо наступні два елементи нулі
 				if (!arr[i]) //якщо елемент = 0
 					printf("");
 				else if(i == 1) //якщо індекс елементу = 1
